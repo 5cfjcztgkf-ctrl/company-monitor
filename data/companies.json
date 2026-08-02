@@ -1,0 +1,292 @@
+{
+  "last_updated": "2026-08-02T11:00:00+08:00",
+  "companies": ["华为", "长鑫存储"],
+  "company_sources": {
+    "华为": {
+      "career_url": "https://career.huawei.com/reccampportal/portal5/campus-recruitment.html",
+      "career_api_url": "https://career.huawei.com/reccampportal/services/portal/portaluser/queryCampusRecruitmentInfos",
+      "nowcoder_search": "https://www.nowcoder.com/search?type=post&query=华为",
+      "yingjiesheng_search": "https://www.yingjiesheng.com/searchresult?keyword=华为",
+      "wechat_keyword": "华为 校招 宣讲会 2027届"
+    },
+    "长鑫存储": {
+      "career_url": "https://www.cxmt.com/career/campus",
+      "career_api_url": "",
+      "nowcoder_search": "https://www.nowcoder.com/search?type=post&query=长鑫存储",
+      "yingjiesheng_search": "https://www.yingjiesheng.com/searchresult?keyword=长鑫存储",
+      "wechat_keyword": "长鑫存储 校招 宣讲会 2027届"
+    }
+  },
+  "universities": [
+    {
+      "id": "hust",
+      "name": "华中科技大学",
+      "short_name": "华科",
+      "employment_url": "https://job.hust.edu.cn",
+      "presentation_search_url": "https://job.hust.edu.cn/search?keyword=",
+      "wechat_account": "华中科技大学就业指导与服务中心",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "whu",
+      "name": "武汉大学",
+      "short_name": "武大",
+      "employment_url": "https://www.xsjy.whu.edu.cn",
+      "presentation_search_url": "https://www.xsjy.whu.edu.cn/search?keyword=",
+      "wechat_account": "武大就业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "whut",
+      "name": "武汉理工大学",
+      "short_name": "武理",
+      "employment_url": "https://scc.whut.edu.cn",
+      "presentation_search_url": "https://scc.whut.edu.cn/search?keyword=",
+      "wechat_account": "武汉理工大学学生就业指导中心",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "cug",
+      "name": "中国地质大学（武汉）",
+      "short_name": "地大",
+      "employment_url": "https://cug.91wllm.cn",
+      "presentation_search_url": "https://cug.91wllm.cn/teachin",
+      "wechat_account": "地大云就业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "ustc",
+      "name": "中国科学技术大学",
+      "short_name": "中科大",
+      "employment_url": "http://www.job.ustc.edu.cn",
+      "presentation_search_url": "http://www.job.ustc.edu.cn/Teachin",
+      "wechat_account": "科大就业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "nankai",
+      "name": "南开大学",
+      "short_name": "南开",
+      "employment_url": "https://career.nankai.edu.cn",
+      "presentation_search_url": "https://career.nankai.edu.cn/career/index",
+      "wechat_account": "南开就业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "jlu",
+      "name": "吉林大学",
+      "short_name": "吉大",
+      "employment_url": "https://jdjyw.jlu.edu.cn",
+      "presentation_search_url": "https://jdjyw.jlu.edu.cn/portal/recruit",
+      "wechat_account": "吉大就业创业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "neu",
+      "name": "东北大学",
+      "short_name": "东大",
+      "employment_url": "http://job.neu.edu.cn",
+      "presentation_search_url": "http://job.neu.edu.cn/portal/home",
+      "wechat_account": "东大就业服务",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "dlut",
+      "name": "大连理工大学",
+      "short_name": "大工",
+      "employment_url": "https://job.dlut.edu.cn",
+      "presentation_search_url": "https://job.dlut.edu.cn/portal/recruit",
+      "wechat_account": "DUT学生服务",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "scut",
+      "name": "华南理工大学",
+      "short_name": "华工",
+      "employment_url": "https://jyzx.scut.edu.cn",
+      "presentation_search_url": "https://jyzx.scut.edu.cn/home/recruitList",
+      "wechat_account": "华南理工大学学生就业指导中心",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "csu",
+      "name": "中南大学",
+      "short_name": "中南",
+      "employment_url": "https://career.csu.edu.cn",
+      "presentation_search_url": "https://career.csu.edu.cn/campus",
+      "wechat_account": "中南大学就业指导中心",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "uestc",
+      "name": "电子科技大学",
+      "short_name": "成电",
+      "employment_url": "https://jiuye.uestc.edu.cn",
+      "presentation_search_url": "https://jiuye.uestc.edu.cn/career/search?keyword=",
+      "wechat_account": "成电就业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "shanghaitech",
+      "name": "上海科技大学",
+      "short_name": "上科大",
+      "employment_url": "https://career.shanghaitech.edu.cn",
+      "presentation_search_url": "https://career.shanghaitech.edu.cn/jyxx",
+      "wechat_account": "上科大学生生涯与就业指导中心",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "xjtu",
+      "name": "西安交通大学",
+      "short_name": "西交",
+      "employment_url": "https://job.xjtu.edu.cn",
+      "presentation_search_url": "https://job.xjtu.edu.cn/search?keyword=",
+      "wechat_account": "西安交大就业创业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "xidian",
+      "name": "西安电子科技大学",
+      "short_name": "西电",
+      "employment_url": "https://job.xidian.edu.cn",
+      "presentation_search_url": "https://job.xidian.edu.cn/notice",
+      "wechat_account": "西电科大就业指导服务中心",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "nwu",
+      "name": "西北大学",
+      "short_name": "西北大",
+      "employment_url": "https://jczx.nwu.edu.cn",
+      "presentation_search_url": "https://jczx.nwu.edu.cn/index/tzgg.htm",
+      "wechat_account": "西大就业创业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "pku",
+      "name": "北京大学",
+      "short_name": "北大",
+      "employment_url": "https://scc.pku.edu.cn",
+      "presentation_search_url": "https://scc.pku.edu.cn/home!recruitList.action?category=2",
+      "wechat_account": "北大就业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "tsinghua",
+      "name": "清华大学",
+      "short_name": "清华",
+      "employment_url": "https://career.tsinghua.edu.cn",
+      "presentation_search_url": "https://career.tsinghua.edu.cn/info/1032/index.htm",
+      "wechat_account": "清华就业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "ucas",
+      "name": "中国科学院大学",
+      "short_name": "国科大",
+      "employment_url": "http://job.ucas.ac.cn",
+      "presentation_search_url": "http://job.ucas.ac.cn/frontpage/ucas/html/recruitmentList.html",
+      "wechat_account": "国科大毕业生就业指导中心",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "fudan",
+      "name": "复旦大学",
+      "short_name": "复旦",
+      "employment_url": "https://career.fudan.edu.cn",
+      "presentation_search_url": "https://career.fudan.edu.cn/NewsList/2.html",
+      "wechat_account": "复旦生涯",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "sjtu",
+      "name": "上海交通大学",
+      "short_name": "上交",
+      "employment_url": "https://www.job.sjtu.edu.cn",
+      "presentation_search_url": "https://www.job.sjtu.edu.cn/eweb/jygl/zpfw.so",
+      "wechat_account": "交大就业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "xmu",
+      "name": "厦门大学",
+      "short_name": "厦大",
+      "employment_url": "https://jy.xmu.edu.cn",
+      "presentation_search_url": "https://jy.xmu.edu.cn/teachin",
+      "wechat_account": "厦大就业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "zzu",
+      "name": "郑州大学",
+      "short_name": "郑大",
+      "employment_url": "https://job.zzu.edu.cn",
+      "presentation_search_url": "https://job.zzu.edu.cn/news/view/tag/xjh",
+      "wechat_account": "郑州大学就业创业指导服务中心",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "nju",
+      "name": "南京大学",
+      "short_name": "南大",
+      "employment_url": "https://job.nju.edu.cn",
+      "presentation_search_url": "https://job.nju.edu.cn/#!/more/news",
+      "wechat_account": "南大就业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "seu",
+      "name": "东南大学",
+      "short_name": "东大",
+      "employment_url": "https://seu.91job.org.cn",
+      "presentation_search_url": "https://seu.91job.org.cn/sub-station/home/10286",
+      "wechat_account": "东南大学就业指导中心",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "zju",
+      "name": "浙江大学",
+      "short_name": "浙大",
+      "employment_url": "https://www.career.zju.edu.cn",
+      "presentation_search_url": "https://www.career.zju.edu.cn/jyxt/jygz/new/newsList",
+      "wechat_account": "浙大就业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    },
+    {
+      "id": "cqu",
+      "name": "重庆大学",
+      "short_name": "重大",
+      "employment_url": "https://www.job.cqu.edu.cn",
+      "presentation_search_url": "http://cqu.cqbys.com/news/view/tag/tzgg",
+      "wechat_account": "重大就业",
+      "huawei": { "status": "not_found", "events": [] },
+      "cxmt": { "status": "not_found", "events": [] }
+    }
+  ]
+}

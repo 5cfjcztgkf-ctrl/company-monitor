@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>企业宣讲会监控看板</title>
+<style>
+  :root {
+    --bg: #1a1a2e; --card: #16213e; --text: #e0e0e0;
+    --text-secondary: #a0a0b0; --accent: #4e8cff;
+    --green: #34d399; --yellow: #fbbf24; --orange: #fb923c;
+    --red: #f87171; --border: #2a2a4a;
+    --tag-green-bg: rgba(52,211,153,.15); --tag-yellow-bg: rgba(251,191,36,.15);
+    --tag-gray-bg: rgba(160,160,176,.1); --tag-blue-bg: rgba(78,140,255,.15);
+    --h-color: #f59e0b; --c-color: #06b6d4;
+    --h-bg: rgba(245,158,11,.1); --c-bg: rgba(6,182,212,.1);
+    --h-border: rgba(245,158,11,.25); --c-border: rgba(6,182,212,.25);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:16px}
+  .container{max-width:1000px;margin:0 auto}
+  .header{text-align:center;padding:24px 0 20px}
+  .header h1{font-size:1.6rem;font-weight:700;margin-bottom:4px}
+  .header .sub{color:var(--text-secondary);font-size:.82rem}
+  .header .companies{display:flex;justify-content:center;gap:16px;margin-top:10px}
+  .header .companies span{font-size:.8rem;font-weight:600;padding:3px 12px;border-radius:12px}
+  .header .companies .h-tag{background:var(--h-bg);color:var(--h-color);border:1px solid var(--h-border)}
+  .header .companies .c-tag{background:var(--c-bg);color:var(--c-color);border:1px solid var(--c-border)}
+  .update-time{display:inline-block;margin-top:8px;background:var(--card);padding:4px 12px;border-radius:20px;font-size:.72rem;color:var(--text-secondary)}
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:20px}
+  .stat-card{background:var(--card);border-radius:10px;padding:14px;text-align:center;border:1px solid var(--border);transition:transform .2s}
+  .stat-card:hover{transform:translateY(-2px)}
+  .stat-card .num{font-size:1.6rem;font-weight:800}
+  .stat-card .label{font-size:.68rem;color:var(--text-secondary);margin-top:2px}
+  .stat-card.all .num{color:var(--accent)}
+  .stat-card.hw .num{color:var(--h-color)}
+  .stat-card.cx .num{color:var(--c-color)}
+  .stat-card.both .num{color:var(--green)}
+  .stat-card.none .num{color:var(--text-secondary)}
+  .filter-bar{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+  .filter-btn{padding:6px 16px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--text-secondary);font-size:.78rem;cursor:pointer;transition:all .2s;user-select:none}
+  .filter-btn:hover{border-color:var(--accent);color:var(--text)}
+  .filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 2px 8px rgba(78,140,255,.3)}
+  .table-wrap{background:var(--card);border-radius:10px;border:1px solid var(--border);overflow:hidden}
+  table{width:100%;border-collapse:collapse;font-size:.82rem}
+  th{text-align:left;padding:8px 10px;background:rgba(0,0,0,.2);color:var(--text-secondary);font-weight:600;font-size:.7rem;position:sticky;top:0}
+  th.col-h{color:var(--h-color)}
+  th.col-c{color:var(--c-color)}
+  td{padding:7px 10px;border-top:1px solid var(--border);vertical-align:middle}
+  tr.main-row{cursor:pointer}
+  tr.main-row td:first-child::after{content:' ▸';color:var(--text-secondary);font-size:.65rem;opacity:.5}
+  tr.main-row:hover td{background:rgba(78,140,255,.06)}
+  .uni-name{font-weight:600;white-space:nowrap}
+  .cell-card{display:inline-block;border-radius:8px;padding:4px 10px;font-size:.72rem;transition:all .2s}
+  .cell-h{background:var(--h-bg);border:1px solid var(--h-border)}
+  .cell-c{background:var(--c-bg);border:1px solid var(--c-border)}
+  .cell-none{background:var(--tag-gray-bg);color:var(--text-secondary);font-size:.7rem;padding:3px 8px;border-radius:8px;font-style:italic}
+  .cell-date{font-weight:700;font-size:.76rem}
+  .cell-venue{font-size:.66rem;color:var(--text-secondary);display:block;margin-top:1px}
+  .cell-time{font-size:.68rem;opacity:.8}
+  .tag-dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:4px;vertical-align:middle}
+  .dot-h{background:var(--h-color)}
+  .dot-c{background:var(--c-color)}
+  .detail-row{display:none}
+  .detail-row.open{display:table-row}
+  .detail-row td{padding:12px 14px;background:rgba(0,0,0,.15);font-size:.74rem;color:var(--text-secondary)}
+  .detail-section{margin-bottom:10px}
+  .detail-section:last-child{margin-bottom:0}
+  .detail-section .s-title{font-weight:700;color:var(--text);font-size:.78rem;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .detail-section .s-title .badge{padding:1px 7px;border-radius:8px;font-size:.65rem}
+  .detail-section .s-title .badge-h{background:var(--h-bg);color:var(--h-color)}
+  .detail-section .s-title .badge-c{background:var(--c-bg);color:var(--c-color)}
+  .detail-section .s-title .badge-none{background:var(--tag-gray-bg);color:var(--text-secondary)}
+  .event-card{background:rgba(0,0,0,.12);border-radius:8px;padding:8px 12px;margin-bottom:6px;border-left:3px solid var(--border)}
+  .event-card.h-event{border-left-color:var(--h-color)}
+  .event-card.c-event{border-left-color:var(--c-color)}
+  .event-card .e-row{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.72rem}
+  .event-card .e-row .e-item{display:flex;align-items:center;gap:4px}
+  .event-card .e-row .e-label{color:var(--text-secondary);flex-shrink:0}
+  .event-card .e-row .e-val{color:var(--text)}
+  .event-link{display:inline-block;margin-top:4px;font-size:.7rem;color:var(--accent);text-decoration:none}
+  .event-link:hover{text-decoration:underline}
+  .source-tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.64rem;background:rgba(78,140,255,.1);color:var(--accent);border:1px solid rgba(78,140,255,.2)}
+  .legend{display:flex;gap:16px;margin-top:14px;font-size:.72rem;color:var(--text-secondary);flex-wrap:wrap}
+  .legend span{display:flex;align-items:center;gap:4px}
+  .loading{text-align:center;padding:40px;color:var(--text-secondary)}
+  .footer{text-align:center;padding:28px 0;color:var(--text-secondary);font-size:.7rem}
+  /* 密码锁屏 */
+  #lockScreen{position:fixed;inset:0;background:var(--bg);z-index:999;display:flex;align-items:center;justify-content:center;flex-direction:column}
+  #lockScreen .lock-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px 24px;text-align:center;max-width:320px;width:90%}
+  #lockScreen .lock-icon{font-size:2.4rem;margin-bottom:12px}
+  #lockScreen h2{font-size:1.1rem;margin-bottom:6px}
+  #lockScreen .hint{font-size:.74rem;color:var(--text-secondary);margin-bottom:18px}
+  #lockScreen input{width:100%;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:.9rem;text-align:center;outline:none;letter-spacing:2px}
+  #lockScreen input:focus{border-color:var(--accent)}
+  #lockScreen button{margin-top:12px;width:100%;padding:10px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-size:.9rem;font-weight:600;cursor:pointer}
+  #lockScreen .err{color:var(--red);font-size:.74rem;margin-top:8px;display:none}
+  #mainContent{display:none}
+  .no-event{color:var(--text-secondary);font-style:italic;padding:4px 0}
+  .timeline{margin-top:4px;font-size:.66rem;color:var(--text-secondary)}
+  @media(max-width:640px){
+    .stats{grid-template-columns:repeat(3,1fr)}
+    .header h1{font-size:1.3rem}
+    .header .companies{gap:10px}
+    th,td{padding:5px 6px;font-size:.64rem}
+    th{font-size:.6rem}
+    .cell-card{padding:3px 7px;font-size:.66rem}
+    .cell-date{font-size:.7rem}
+    .cell-venue{font-size:.62rem}
+    .filter-btn{padding:6px 10px;font-size:.72rem}
+    .filter-bar{gap:5px}
+    .event-card .e-row{gap:4px 10px;font-size:.66rem}
+    table{min-width:520px}
+  }
+</style>
+</head>
+<body>
+<!-- 密码锁屏 -->
+<div id="lockScreen">
+  <div class="lock-box">
+    <div class="lock-icon">🏢</div>
+    <h2>企业宣讲会监控</h2>
+    <div class="hint">输入密码查看华为 & 长鑫存储宣讲会安排</div>
+    <input type="password" id="pwdInput" placeholder="输入密码" autofocus>
+    <button onclick="verify()">确认</button>
+    <div class="err" id="pwdErr">密码错误，请重试</div>
+  </div>
+</div>
+
+<!-- 主内容 -->
+<div id="mainContent">
+<div class="container">
+  <div class="header">
+    <h1>🎯 企业宣讲会监控看板</h1>
+    <div class="sub">27 所目标高校 · 2027 届秋季校招</div>
+    <div class="companies">
+      <span class="h-tag">● 华为</span>
+      <span class="c-tag">● 长鑫存储</span>
+    </div>
+    <div class="update-time" id="updateTime">加载中...</div>
+  </div>
+
+  <div class="stats" id="stats"></div>
+  <div class="filter-bar" id="filterBar"></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>高校</th><th class="col-h">华为</th><th class="col-c">长鑫存储</th></tr></thead>
+      <tbody id="tableBody"><tr><td colspan="3" class="loading">正在加载数据...</td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="legend">
+    <span><span class="tag-dot dot-h"></span> 华为有宣讲</span>
+    <span><span class="tag-dot dot-c"></span> 长鑫存储有宣讲</span>
+    <span>⚪ 暂未发布</span>
+    <span>—— 仅展示2027届秋招宣讲会，不包含双选会/招聘会参会信息</span>
+  </div>
+  <div class="footer">李双利 · 每日 8 次自动更新 · GitHub Actions 驱动</div>
+</div>
+</div><!-- /mainContent -->
+
+<script>
+let DATA = [];
+let currentFilter = 'all';
+
+// 状态转文本
+const STATUS = {not_found:'⚪ 暂未发布', scheduled:'🟢 已发布', checking:'🔄 检查中'};
+
+async function load() {
+  try {
+    const resp = await fetch('data/companies.json?' + Date.now());
+    const json = await resp.json();
+    DATA = json.universities;
+    document.getElementById('updateTime').textContent = '最后更新：' + json.last_updated;
+  } catch(e) {
+    document.getElementById('tableBody').innerHTML = '<tr><td colspan="3" class="loading">⚠️ 数据加载失败，请稍后刷新</td></tr>';
+    console.error(e);
+    return;
+  }
+  render();
+}
+
+function countCompany(companyKey){
+  return DATA.filter(d => {
+    const c = companyKey === 'huawei' ? d.huawei : d.cxmt;
+    return c && c.status === 'scheduled';
+  }).length;
+}
+
+function render(){
+  const hw = countCompany('huawei'), cx = countCompany('cxmt');
+  const both = DATA.filter(d => d.huawei?.status==='scheduled' && d.cxmt?.status==='scheduled').length;
+  const none = DATA.filter(d => d.huawei?.status==='not_found' && d.cxmt?.status==='not_found').length;
+
+  document.getElementById('stats').innerHTML = `
+    <div class="stat-card all"><div class="num">${DATA.length}</div><div class="label">监控高校</div></div>
+    <div class="stat-card hw"><div class="num">${hw}</div><div class="label">华为有宣讲</div></div>
+    <div class="stat-card cx"><div class="num">${cx}</div><div class="label">长鑫存储有宣讲</div></div>
+    <div class="stat-card both"><div class="num">${both}</div><div class="label">均有宣讲</div></div>
+    <div class="stat-card none"><div class="num">${none}</div><div class="label">均未发布</div></div>`;
+
+  document.getElementById('filterBar').innerHTML = `
+    <button class="filter-btn ${currentFilter==='all'?'active':''}" onclick="filter('all')">全部 ${DATA.length}</button>
+    <button class="filter-btn ${currentFilter==='huawei'?'active':''}" onclick="filter('huawei')">● 华为有宣讲 ${hw}</button>
+    <button class="filter-btn ${currentFilter==='cxmt'?'active':''}" onclick="filter('cxmt')">● 长鑫存储有宣讲 ${cx}</button>
+    <button class="filter-btn ${currentFilter==='both'?'active':''}" onclick="filter('both')">均有宣讲 ${both}</button>
+    <button class="filter-btn ${currentFilter==='none'?'active':''}" onclick="filter('none')">均未发布 ${none}</button>`;
+
+  let list = DATA;
+  if (currentFilter === 'huawei') list = DATA.filter(d => d.huawei?.status==='scheduled');
+  else if (currentFilter === 'cxmt') list = DATA.filter(d => d.cxmt?.status==='scheduled');
+  else if (currentFilter === 'both') list = DATA.filter(d => d.huawei?.status==='scheduled' && d.cxmt?.status==='scheduled');
+  else if (currentFilter === 'none') list = DATA.filter(d => d.huawei?.status==='not_found' && d.cxmt?.status==='not_found');
+
+  document.getElementById('tableBody').innerHTML = list.map((d,i)=>{
+    const idx = DATA.indexOf(d);
+    return `<tr class="main-row" onclick="toggle(${idx})">
+      <td><span class="uni-name">${d.name}</span></td>
+      ${renderCell(d.huawei, 'h')}
+      ${renderCell(d.cxmt, 'c')}
+    </tr>
+    <tr class="detail-row" id="d-${idx}">
+      <td colspan="3">${renderDetail(d)}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderCell(companyData, cls){
+  if (!companyData || companyData.status === 'not_found'){
+    return `<td><span class="cell-none">${companyData?.status ? STATUS[companyData.status] : '⚪ 暂未发布'}</span></td>`;
+  }
+  if (companyData.status === 'scheduled' && companyData.events && companyData.events.length > 0){
+    const e = companyData.events[0];
+    return `<td>
+      <div class="cell-card cell-${cls}">
+        <span class="cell-date">${e.date||'待定'}</span>
+        <span class="cell-time">${e.time||''}</span>
+        <span class="cell-venue">${e.venue||''}</span>
+      </div>
+      ${companyData.events.length > 1 ? `<span class="timeline">+${companyData.events.length-1}场</span>` : ''}
+    </td>`;
+  }
+  return `<td><span class="cell-none">${STATUS[companyData.status]||'—'}</span></td>`;
+}
+
+function renderDetail(d){
+  let html = '';
+  // 华为
+  html += renderCompanyDetail(d.huawei, '华为', 'h');
+  // 长鑫存储
+  html += renderCompanyDetail(d.cxmt, '长鑫存储', 'c');
+  // 备注
+  if (d.notes) {
+    html += `<div class="detail-section"><div class="s-title">📝 备注</div><div style="font-size:.72rem">${d.notes}</div></div>`;
+  }
+  return html || '<div class="no-event">暂无宣讲会信息</div>';
+}
+
+function renderCompanyDetail(cd, cname, cls){
+  const statusLabel = cd?.status ? STATUS[cd.status] : STATUS.not_found;
+  const hasEvents = cd?.status==='scheduled' && cd?.events && cd.events.length>0;
+  
+  let html = `<div class="detail-section">
+    <div class="s-title">
+      <span class="badge badge-${cls}">●</span> ${cname}
+      <span class="badge badge-${hasEvents ? cls : 'none'}">${statusLabel}</span>
+    </div>`;
+  
+  if (hasEvents){
+    cd.events.forEach(e => {
+      html += `<div class="event-card ${cls}-event">
+        <div class="e-row">
+          <span class="e-item"><span class="e-label">📅</span><span class="e-val">${e.date||'待定'}</span></span>
+          <span class="e-item"><span class="e-label">🕐</span><span class="e-val">${e.time||'待定'}</span></span>
+          <span class="e-item"><span class="e-label">📍</span><span class="e-val">${e.venue||'待定'}</span></span>
+          ${e.type ? `<span class="e-item"><span class="e-label">📋</span><span class="e-val">${e.type}</span></span>` : ''}
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:4px;flex-wrap:wrap">
+          ${e.source_label ? `<span class="source-tag">📡 ${e.source_label}</span>` : ''}
+          ${e.source_url ? `<a href="${e.source_url}" target="_blank" rel="noopener" class="event-link">查看原文 →</a>` : ''}
+        </div>
+        ${e.notes ? `<div style="font-size:.66rem;color:var(--text-secondary);margin-top:2px">${e.notes}</div>` : ''}
+      </div>`;
+    });
+  } else {
+    html += '<div class="no-event">暂无宣讲会安排</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function toggle(i){
+  document.getElementById('d-'+i).classList.toggle('open');
+}
+
+function filter(f){
+  currentFilter=f;
+  render();
+}
+
+// ===== 密码验证 =====
+const PWD_HASH = '2a135ed1f95982f85a4b2e636479b520177e1ebad2917dbcb72c414278bd9752';
+
+async function sha256(text) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+async function verify() {
+  const input = document.getElementById('pwdInput').value;
+  const hash = await sha256(input);
+  if (hash === PWD_HASH) {
+    sessionStorage.setItem('company_auth', '1');
+    document.getElementById('lockScreen').style.display = 'none';
+    document.getElementById('mainContent').style.display = 'block';
+    load();
+  } else {
+    document.getElementById('pwdErr').style.display = 'block';
+    document.getElementById('pwdInput').value = '';
+    document.getElementById('pwdInput').focus();
+  }
+}
+
+document.getElementById('pwdInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') verify();
+});
+
+if (sessionStorage.getItem('company_auth') === '1' || sessionStorage.getItem('campus_auth') === '1') {
+  sessionStorage.setItem('company_auth', '1');
+  document.getElementById('lockScreen').style.display = 'none';
+  document.getElementById('mainContent').style.display = 'block';
+  load();
+}
+</script>
+</body>
+</html>

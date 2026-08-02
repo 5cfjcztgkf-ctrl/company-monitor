@@ -1,0 +1,67 @@
+name: 企业宣讲会监控
+
+on:
+  schedule:
+    # 北京时间 9/11/13/15/19/21 点 = UTC 1/3/5/7/11/13 点
+    # 用 :37 避開整点流量高峰
+    - cron: "37 1,3,5,7,11,13 * * *"
+  workflow_dispatch:  # 允许手动触发
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  check-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install requests beautifulsoup4 urllib3
+
+      - name: 运行宣讲会检查
+        id: check
+        continue-on-error: true
+        run: python check_companies.py
+
+      - name: 提交数据更新
+        if: always()
+        run: |
+          git config user.name "宣讲会情报员"
+          git config user.email "company-bot@example.com"
+          git add data/companies.json
+          if git diff --staged --quiet; then
+            echo "无数据变更"
+          else
+            git commit -m "🏢 宣讲会更新: $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M') 华为&长鑫存储"
+            git pull --rebase origin main || true
+            git push origin main
+          fi
+
+      - name: 设置 GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: 上传构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: 打印看板地址
+        run: |
+          echo "📱 宣讲会看板: ${{ steps.deployment.outputs.page_url }}"

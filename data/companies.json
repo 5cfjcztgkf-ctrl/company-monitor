@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-23T17:48:14+08:00",
+  "last_updated": "2026-11-24T06:58:37+08:00",
   "companies": [
     "华为",
     "长鑫存储"
@@ -58,18 +58,18 @@
         "status": "scheduled",
         "events": [
           {
-            "date": "2025-04-17",
-            "time": "16:44",
-            "venue": "全国性股份制银行的信用卡中心",
+            "date": "2025-06-24",
+            "time": "16:17",
+            "venue": "食堂",
             "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6",
             "source_label": "牛客网",
             "type": "宣讲会",
             "notes": "[牛客] 华为 武汉大学 宣讲会"
           },
           {
-            "date": "2026-10-28",
-            "time": "16:44",
-            "venue": "全国性股份制银行的信用卡中心",
+            "date": "2025-07-22",
+            "time": "16:17",
+            "venue": "食堂",
             "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6",
             "source_label": "牛客网",
             "type": "宣讲会",
@@ -81,18 +81,18 @@
         "status": "scheduled",
         "events": [
           {
-            "date": "2025-04-17",
-            "time": "16:44",
-            "venue": "全国性股份制银行的信用卡中心",
+            "date": "2025-06-24",
+            "time": "16:17",
+            "venue": "食堂",
             "source_url": "https://www.nowcoder.com/search?type=post&query=%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%20%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6",
             "source_label": "牛客网",
             "type": "宣讲会",
             "notes": "[牛客] 长鑫存储 武汉大学 宣讲会"
           },
           {
-            "date": "2026-10-28",
-            "time": "16:44",
-            "venue": "全国性股份制银行的信用卡中心",
+            "date": "2025-07-22",
+            "time": "16:17",
+            "venue": "食堂",
             "source_url": "https://www.nowcoder.com/search?type=post&query=%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%20%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6",
             "source_label": "牛客网",
             "type": "宣讲会",
@@ -109,50 +109,12 @@
       "presentation_search_url": "https://scc.whut.edu.cn/search?keyword=",
       "wechat_account": "武汉理工大学学生就业指导中心",
       "huawei": {
-        "status": "scheduled",
-        "events": [
-          {
-            "date": "2025-05-13",
-            "time": "16:09",
-            "venue": "在图书馆",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E6%AD%A6%E6%B1%89%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 华为 武汉理工大学 宣讲会"
-          },
-          {
-            "date": "2026-03-24",
-            "time": "16:09",
-            "venue": "在图书馆",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E6%AD%A6%E6%B1%89%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 华为 武汉理工大学 宣讲会"
-          }
-        ]
+        "status": "not_found",
+        "events": []
       },
       "cxmt": {
-        "status": "scheduled",
-        "events": [
-          {
-            "date": "2025-05-13",
-            "time": "16:09",
-            "venue": "在图书馆",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%20%E6%AD%A6%E6%B1%89%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 长鑫存储 武汉理工大学 宣讲会"
-          },
-          {
-            "date": "2026-03-24",
-            "time": "16:09",
-            "venue": "在图书馆",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%20%E6%AD%A6%E6%B1%89%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 长鑫存储 武汉理工大学 宣讲会"
-          }
-        ]
+        "status": "not_found",
+        "events": []
       }
     },
     {
@@ -218,8 +180,27 @@
         ]
       },
       "cxmt": {
-        "status": "not_found",
-        "events": []
+        "status": "scheduled",
+        "events": [
+          {
+            "date": "2025-01-17",
+            "time": "15:39",
+            "venue": "华为OD招聘",
+            "source_url": "https://www.nowcoder.com/search?type=post&query=%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%20%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6",
+            "source_label": "牛客网",
+            "type": "宣讲会",
+            "notes": "[牛客] 长鑫存储 南开大学 宣讲会"
+          },
+          {
+            "date": "2025-07-25",
+            "time": "15:39",
+            "venue": "华为OD招聘",
+            "source_url": "https://www.nowcoder.com/search?type=post&query=%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%20%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6",
+            "source_label": "牛客网",
+            "type": "宣讲会",
+            "notes": "[牛客] 长鑫存储 南开大学 宣讲会"
+          }
+        ]
       }
     },
     {
@@ -230,27 +211,8 @@
       "presentation_search_url": "https://jdjyw.jlu.edu.cn/portal/recruit",
       "wechat_account": "吉大就业创业",
       "huawei": {
-        "status": "scheduled",
-        "events": [
-          {
-            "date": "2025-01-17",
-            "time": "15:39",
-            "venue": "华为OD招聘",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E5%90%89%E6%9E%97%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 华为 吉林大学 宣讲会"
-          },
-          {
-            "date": "2025-07-25",
-            "time": "15:39",
-            "venue": "华为OD招聘",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E5%90%89%E6%9E%97%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 华为 吉林大学 宣讲会"
-          }
-        ]
+        "status": "not_found",
+        "events": []
       },
       "cxmt": {
         "status": "not_found",
@@ -265,27 +227,8 @@
       "presentation_search_url": "http://job.neu.edu.cn/portal/home",
       "wechat_account": "东大就业服务",
       "huawei": {
-        "status": "scheduled",
-        "events": [
-          {
-            "date": "2025-10-29",
-            "time": "18:49",
-            "venue": "德勤招聘",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 华为 东北大学 宣讲会"
-          },
-          {
-            "date": "2026-03-10",
-            "time": "18:49",
-            "venue": "德勤招聘",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E4%B8%9C%E5%8C%97%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 华为 东北大学 宣讲会"
-          }
-        ]
+        "status": "not_found",
+        "events": []
       },
       "cxmt": {
         "status": "not_found",
@@ -386,27 +329,8 @@
       "presentation_search_url": "https://jiuye.uestc.edu.cn/career/search?keyword=",
       "wechat_account": "成电就业",
       "huawei": {
-        "status": "scheduled",
-        "events": [
-          {
-            "date": "2026-09-20",
-            "time": "17:52",
-            "venue": "进去会议室",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 华为 电子科技大学 宣讲会"
-          },
-          {
-            "date": "2026-09-29",
-            "time": "17:52",
-            "venue": "进去会议室",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 华为 电子科技大学 宣讲会"
-          }
-        ]
+        "status": "not_found",
+        "events": []
       },
       "cxmt": {
         "status": "not_found",
@@ -478,18 +402,18 @@
         "status": "scheduled",
         "events": [
           {
-            "date": "2026-05-08",
-            "time": "16:44",
-            "venue": "都有人才招聘",
+            "date": "2025-03-17",
+            "time": "15:24",
+            "venue": "在招聘",
             "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E8%A5%BF%E5%AE%89%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6",
             "source_label": "牛客网",
             "type": "宣讲会",
             "notes": "[牛客] 华为 西安交通大学 宣讲会"
           },
           {
-            "date": "2026-05-10",
-            "time": "16:44",
-            "venue": "都有人才招聘",
+            "date": "2025-05-13",
+            "time": "15:24",
+            "venue": "在招聘",
             "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E8%A5%BF%E5%AE%89%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6",
             "source_label": "牛客网",
             "type": "宣讲会",
@@ -498,8 +422,18 @@
         ]
       },
       "cxmt": {
-        "status": "not_found",
-        "events": []
+        "status": "scheduled",
+        "events": [
+          {
+            "date": "2026-06-21",
+            "time": "11:32",
+            "venue": "北京市朝阳区北苑路北美国际商务中心",
+            "source_url": "https://www.nowcoder.com/search?type=post&query=%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%20%E8%A5%BF%E5%AE%89%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6",
+            "source_label": "牛客网",
+            "type": "宣讲会",
+            "notes": "[牛客] 长鑫存储 西安交通大学 宣讲会"
+          }
+        ]
       }
     },
     {
@@ -513,18 +447,9 @@
         "status": "scheduled",
         "events": [
           {
-            "date": "2025-05-21",
-            "time": "17:25",
-            "venue": "中物院软件中心",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E8%A5%BF%E5%AE%89%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 华为 西安电子科技大学 宣讲会"
-          },
-          {
-            "date": "2025-06-12",
-            "time": "17:25",
-            "venue": "中物院软件中心",
+            "date": "2026-06-21",
+            "time": "11:32",
+            "venue": "北京市朝阳区北苑路北美国际商务中心",
             "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E8%A5%BF%E5%AE%89%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6",
             "source_label": "牛客网",
             "type": "宣讲会",
@@ -536,18 +461,9 @@
         "status": "scheduled",
         "events": [
           {
-            "date": "2025-05-21",
-            "time": "17:25",
-            "venue": "中物院软件中心",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%20%E8%A5%BF%E5%AE%89%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 长鑫存储 西安电子科技大学 宣讲会"
-          },
-          {
-            "date": "2025-06-12",
-            "time": "17:25",
-            "venue": "中物院软件中心",
+            "date": "2026-06-21",
+            "time": "11:32",
+            "venue": "北京市朝阳区北苑路北美国际商务中心",
             "source_url": "https://www.nowcoder.com/search?type=post&query=%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%20%E8%A5%BF%E5%AE%89%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6",
             "source_label": "牛客网",
             "type": "宣讲会",
@@ -564,27 +480,8 @@
       "presentation_search_url": "https://jczx.nwu.edu.cn/index/tzgg.htm",
       "wechat_account": "西大就业创业",
       "huawei": {
-        "status": "scheduled",
-        "events": [
-          {
-            "date": "2026-03-23",
-            "time": "13:30",
-            "venue": "华为通用软件开发工程师实习招聘",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E8%A5%BF%E5%8C%97%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 华为 西北大学 宣讲会"
-          },
-          {
-            "date": "2026-03-24",
-            "time": "13:30",
-            "venue": "华为通用软件开发工程师实习招聘",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E8%A5%BF%E5%8C%97%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 华为 西北大学 宣讲会"
-          }
-        ]
+        "status": "not_found",
+        "events": []
       },
       "cxmt": {
         "status": "not_found",
@@ -664,27 +561,8 @@
         ]
       },
       "cxmt": {
-        "status": "scheduled",
-        "events": [
-          {
-            "date": "2025-03-25",
-            "time": "17:21",
-            "venue": "中物院软件中心",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%20%E4%B8%AD%E5%9B%BD%E7%A7%91%E5%AD%A6%E9%99%A2%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 长鑫存储 中国科学院大学 宣讲会"
-          },
-          {
-            "date": "2026-07-28",
-            "time": "17:21",
-            "venue": "中物院软件中心",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%20%E4%B8%AD%E5%9B%BD%E7%A7%91%E5%AD%A6%E9%99%A2%E5%A4%A7%E5%AD%A6",
-            "source_label": "牛客网",
-            "type": "宣讲会",
-            "notes": "[牛客] 长鑫存储 中国科学院大学 宣讲会"
-          }
-        ]
+        "status": "not_found",
+        "events": []
       }
     },
     {
@@ -718,8 +596,27 @@
         ]
       },
       "cxmt": {
-        "status": "not_found",
-        "events": []
+        "status": "scheduled",
+        "events": [
+          {
+            "date": "2025-04-21",
+            "time": "13:14",
+            "venue": "英杰交流中心",
+            "source_url": "https://www.nowcoder.com/search?type=post&query=%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%20%E5%A4%8D%E6%97%A6%E5%A4%A7%E5%AD%A6",
+            "source_label": "牛客网",
+            "type": "宣讲会",
+            "notes": "[牛客] 长鑫存储 复旦大学 宣讲会"
+          },
+          {
+            "date": "2026-03-13",
+            "time": "13:14",
+            "venue": "英杰交流中心",
+            "source_url": "https://www.nowcoder.com/search?type=post&query=%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%20%E5%A4%8D%E6%97%A6%E5%A4%A7%E5%AD%A6",
+            "source_label": "牛客网",
+            "type": "宣讲会",
+            "notes": "[牛客] 长鑫存储 复旦大学 宣讲会"
+          }
+        ]
       }
     },
     {
@@ -730,8 +627,27 @@
       "presentation_search_url": "https://www.job.sjtu.edu.cn/eweb/jygl/zpfw.so",
       "wechat_account": "交大就业",
       "huawei": {
-        "status": "not_found",
-        "events": []
+        "status": "scheduled",
+        "events": [
+          {
+            "date": "2025-07-24",
+            "time": "20:38",
+            "venue": "西北铁路系统招聘",
+            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6",
+            "source_label": "牛客网",
+            "type": "宣讲会",
+            "notes": "[牛客] 华为 上海交通大学 宣讲会"
+          },
+          {
+            "date": "2025-09-23",
+            "time": "20:38",
+            "venue": "西北铁路系统招聘",
+            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6",
+            "source_label": "牛客网",
+            "type": "宣讲会",
+            "notes": "[牛客] 华为 上海交通大学 宣讲会"
+          }
+        ]
       },
       "cxmt": {
         "status": "scheduled",
@@ -756,22 +672,22 @@
       "presentation_search_url": "https://jy.xmu.edu.cn/teachin",
       "wechat_account": "厦大就业",
       "huawei": {
+        "status": "not_found",
+        "events": []
+      },
+      "cxmt": {
         "status": "scheduled",
         "events": [
           {
             "date": "2026-06-21",
             "time": "11:32",
             "venue": "北京市朝阳区北苑路北美国际商务中心",
-            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6",
+            "source_url": "https://www.nowcoder.com/search?type=post&query=%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%20%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6",
             "source_label": "牛客网",
             "type": "宣讲会",
-            "notes": "[牛客] 华为 厦门大学 宣讲会"
+            "notes": "[牛客] 长鑫存储 厦门大学 宣讲会"
           }
         ]
-      },
-      "cxmt": {
-        "status": "not_found",
-        "events": []
       }
     },
     {
@@ -903,8 +819,27 @@
       "presentation_search_url": "http://cqu.cqbys.com/news/view/tag/tzgg",
       "wechat_account": "重大就业",
       "huawei": {
-        "status": "not_found",
-        "events": []
+        "status": "scheduled",
+        "events": [
+          {
+            "date": "2025-08-21",
+            "time": "17:16",
+            "venue": "听说大厂招聘",
+            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6",
+            "source_label": "牛客网",
+            "type": "宣讲会",
+            "notes": "[牛客] 华为 重庆大学 宣讲会"
+          },
+          {
+            "date": "2025-10-05",
+            "time": "17:16",
+            "venue": "听说大厂招聘",
+            "source_url": "https://www.nowcoder.com/search?type=post&query=%E5%8D%8E%E4%B8%BA%20%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6",
+            "source_label": "牛客网",
+            "type": "宣讲会",
+            "notes": "[牛客] 华为 重庆大学 宣讲会"
+          }
+        ]
       },
       "cxmt": {
         "status": "not_found",
